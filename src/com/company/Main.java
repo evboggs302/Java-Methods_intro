@@ -10,6 +10,20 @@ public class Main {
        int finalScore =  calculateScore(true, 10000, 8, 5000);
         System.out.println("this is the finalScore = " + finalScore);
 
+
+
+
+        int highScorePosition = calculateHighScorePosition(1500);
+        displayHighScorePosition("Tim", highScorePosition);
+
+        highScorePosition = calculateHighScorePosition(900);
+        displayHighScorePosition("Johnny", highScorePosition);
+
+        highScorePosition = calculateHighScorePosition(400);
+        displayHighScorePosition("Sarah", highScorePosition);
+
+        highScorePosition = calculateHighScorePosition(99);
+        displayHighScorePosition("Nathan", highScorePosition);
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
@@ -20,6 +34,24 @@ public class Main {
             return finalScore;
         }
         return -1;
+
+    }
+
+    public static void displayHighScorePosition(String name, int position){
+        System.out.println(name + " managed to get into position " + position + " on the highscore table.");
+    }
+
+    public static int calculateHighScorePosition(int playerScore){
+//        System.out.println("this is their Score = " + playerScore);
+        if(playerScore > 1000){
+            return 1;
+        } else if (playerScore <=1000 && playerScore > 500){
+            return 2;
+        }else if (playerScore <=500 && playerScore > 100){
+            return 3;
+        } else {
+            return 4;
+        }
 
     }
 }
